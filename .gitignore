@@ -1,0 +1,9 @@
+/*
+/*/
+
+!.gitignore
+!Properties/*
+!FLTextureExporter.csproj
+!FLTextureExporter.sln
+!*.cs
+!readme.md
