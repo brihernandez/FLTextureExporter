@@ -2,8 +2,10 @@
 /*/
 
 !.gitignore
-!Properties/*
+!/Screenshots/
+
 !FLTextureExporter.csproj
 !FLTextureExporter.sln
 !*.cs
+
 !readme.md
