@@ -21,6 +21,10 @@ class Program
             return;
         }
 
+        // ====================================================================
+        // Handle the path to the Librelancer tools.
+        // ====================================================================
+
         for (int i = 0; i < args.Length; ++i)
         {
             if (i == 0)
@@ -35,9 +39,25 @@ class Program
 
         if (!File.Exists(pathToEditScript))
         {
-            Console.Write($"Could not find lleditscript.exe!\n{pathToEditScript}\n");
+            Console.WriteLine($"\nCould not find lleditscript.exe in the following directory:\n{Path.GetFullPath(Path.GetDirectoryName(pathToEditScript))}\n");
             return;
         }
+
+        // ====================================================================
+        // Handle the pathing to Freelancer.
+        // Checks if it's a valid Freelancer by seeing if the EXE is there.
+        // ====================================================================
+
+        var exePath = Path.Combine(Path.GetFullPath(freelancerDirectory), "EXE", "Freelancer.exe");
+        if (!File.Exists(exePath))
+        {
+            Console.WriteLine($"\nInvalid path to Freelancer's root:\n{freelancerDirectory}\n");
+            return;
+        }
+
+        // ====================================================================
+        // Run export program and logic.
+        // ====================================================================
 
         SelectExport:
         string fileTypeToExport;
