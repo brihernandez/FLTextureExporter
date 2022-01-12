@@ -48,7 +48,9 @@ for (int i = 1; i < Arguments.Length; ++i)
 
 if (exportTotal == 0){
     Console.WriteLine($"\nNo {Path.GetExtension(Arguments[1])}s with textures found in {Path.GetDirectoryName(Arguments[1])}");
-    Directory.Delete(directory);
+    try {
+        Directory.Delete(directory);
+    } catch (System.IO.IOException) { }
 }
 else {
     Console.WriteLine($"\nExported {exportTotal} total textures from {Path.GetDirectoryName(Arguments[1])}");

@@ -63,7 +63,7 @@ class Program
         string fileTypeToExport;
         while (true)
         {
-            Console.WriteLine("\nSelect file type to export:\n1. txm\n2. mat\n3. 3db");
+            Console.WriteLine("\nSelect file type to export:\n1. txm\n2. mat\n3. 3db\n4. cmp");
             Console.Write("\nSelection: ");
             var selectTypeKey = Console.ReadKey().Key;
             Console.WriteLine();
@@ -83,6 +83,12 @@ class Program
                 fileTypeToExport = "*.3db";
                 break;
             }
+            else if (selectTypeKey == ConsoleKey.D4)
+            {
+                fileTypeToExport = "*.cmp";
+                break;
+            }
+
             else if (selectTypeKey == ConsoleKey.Escape)
                 return;
         }
